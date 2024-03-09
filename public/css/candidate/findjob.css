@@ -1,0 +1,292 @@
+:root{
+    --bg-color: #f4f7fe;
+    --blue-color: blue;
+    --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107;
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-black: #000;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+}
+nav{
+    top: 0;
+}
+main{
+    min-height: 100vh;
+    margin-top: 70px;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+}
+main h2{
+    font-size: 2.5rem;
+    color: blue;
+    margin-top: 20px;
+}
+main p{
+    font-size: 1.2rem;
+    color: grey;
+    margin-bottom: 30px;
+}
+main form{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+form input, form select{
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid black;
+    outline: none;
+    padding: 10px;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+form input:focus{
+    border: 1px solid blue;
+}
+form input[type="file"]{
+    border: none;
+}
+form label{
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 10px 0px;
+}
+form button{
+    width: fit-content;
+    background-color: blue;
+    color: whitesmoke;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+form button span{
+    margin: 0px 0px 0px 10px;
+}
+form label span{
+    color: red;
+} 
+
+main #resumeform{
+    margin: 0;
+}
+
+.skillsbox,.domainbox{
+    display: flex;
+    flex-direction: column;
+    /* margin-bottom: 20px; */
+}
+.skillopt,
+.domainopt{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.skill1{
+    padding: 5px;
+    background-color: grey;
+    display: flex;
+    border-radius: 8px;
+}
+.skill1 p{
+    margin-bottom: 0px;
+}
+#closebtn, #closebtnDomain{
+    color: black;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+.oneline{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0px;
+}
+.oneline input, .oneline select{
+    margin-top: 10px;
+    width: 91%;
+}
+.addbtn,.addbtnDomain{
+    background-color: var(--blue-color);
+    padding: 15px;
+    cursor: pointer;
+    color: white;
+    border-radius: 7px;
+    margin: 0;
+}
+.skill{
+    color: white;
+}
+#skilloptions{
+    margin: 0;
+}
+.joblists{
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.jobs{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 10px 10px 10px 20px;
+    /* margin: 50px; */
+    margin: 20px 10px;
+    border-radius: 8px;
+    position: relative;
+    min-width: 350px;
+    max-width: 500px;
+    flex: 1;
+    background-color: white;
+}
+.details{
+    display: flex;
+    /* background-color: red; */
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.noofapp, .startdate,.name{
+    margin-bottom: 0px;
+}
+.name{
+    color: black;
+}
+.logos{
+    position: absolute;
+    right: 6%;
+    top: 6%;
+}
+.logos img{
+    height: 50px;
+    width: 50px;
+    background-color: #eeeeee;
+    padding: 5px;
+    border-radius: 10px;
+}
+.details p, details a{
+    display: flex;
+    align-items: center;
+    color: black;
+}
+.details a{
+    text-decoration: none;
+    color: blue;
+}
+.actively{
+    padding: 8px;
+    background-color: aquamarine;
+    color: blue;
+    display: inline-block;
+    border-radius: 10px;
+    margin: 10px 0px;
+}
+.jobs h3{
+    margin: 10px 0px;
+}
+.jobs h3 i{
+    margin-right: 10px;
+}
+.where,
+.money{
+    margin: 10px 0px;
+    color: darkgray;
+    display: flex;
+    align-items: center;
+}
+.where span,
+.money span{
+    margin-right: 10px;
+}
+.actively{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+input[name="pdfFile"]{
+    margin-bottom: 0;
+}
+.instruct{
+    color: grey;
+    margin: 0;
+    padding: 0;
+}
+.nofound{
+    height: 300px;
+    width: 80%;
+    background-color: #dfe0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0px;
+    border-radius: 10px;
+}
+.nofound h4{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+@media all and (max-width:700px){
+    main form{
+        width: 80%;
+    }
+    main h2{
+        font-size: 1.5rem;
+    }
+    main .hdr{
+        font-size: 1rem;
+        text-align: center;
+    }
+}
+@media all and (max-width: 650px){
+    form label{
+        font-size: 1.2rem;
+    }
+    .name{
+        font-size: 1rem;
+    }
+    .where,.money{
+        font-size: 1rem;
+    }
+    .details p,.details a{
+        font-size: 0.9rem;
+    }
+    .actively{
+        font-size: 1rem;
+    }
+}
+@media all and (max-width: 450px){
+    main form{
+        width: 90%;
+    }
+    form label{
+        font-size: 1rem;
+    }
+    #resumeform button{
+        font-size: 1rem;
+    }
+    .jobs{
+        min-width: 300px;
+    }
+}

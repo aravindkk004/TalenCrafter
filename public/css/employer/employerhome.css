@@ -1,0 +1,227 @@
+:root{
+    --bg-color: #f4f7fe;
+    --blue-color: blue;
+    --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107;
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-black: #000;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+}
+nav{
+    top: 0px;
+    /* display: none; */
+}
+main{
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    margin-top: 60px;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+}
+.joblists{
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.jobs{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 10px 10px 10px 20px;
+    /* margin: 50px; */
+    margin: 20px 0px;
+    border-radius: 8px;
+    position: relative;
+    min-width: 450px;
+    max-width: 500px;
+    flex: 1;
+    background-color: white;
+}
+.logos{
+    position: absolute;
+    right: 6%;
+    top: 6%;
+}
+.logos img{
+    height: 50px;
+    width: 50px;
+    background-color: #eeeeee;
+    padding: 5px;
+    border-radius: 10px;
+}
+.details{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.details p, details a{
+    display: flex;
+    align-items: center;
+}
+.details a{
+    text-decoration: none;
+    color: blue;
+}
+.actively{
+    padding: 8px;
+    background-color: aquamarine;
+    color: blue;
+    display: inline-block;
+    border-radius: 10px;
+    margin: 10px 0px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+.jobs h3{
+    margin: 10px 0px;
+}
+.jobs h3 i{
+    margin-right: 10px;
+}
+.where,
+.money,
+.app{
+    margin: 10px 0px;
+    color: #545655;
+    display: flex;
+    align-items: center;
+}
+.where span,
+.money span,
+.app i{
+    margin-right: 10px;
+}
+
+.headertag{
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border-top: 5px solid red; */
+    padding: 20px;
+    width: 80%;
+    margin-top: 50px;
+}
+.headertag h2{
+    font-size: 2rem;
+    color: var(--blue-color);
+}
+.headertag a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 1.4rem;
+    background-color: var(--blue-color);
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.nojobs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 100px 0px;
+}
+.nojobs h2{
+    font-size: 2.5rem;
+}
+.nojobs a{
+    padding: 10px 20px ;
+    background-color: var(--blue-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-decoration: none;
+}
+.hed{
+    font-weight: bold;
+}
+.hed i, .hed span{
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+.name{
+    font-weight: bold;
+}
+.delete a{
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border-radius: 8px;
+}
+.viewdet a{
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+@media all and (max-width: 800px){
+    .headertag h2{
+        font-size: 1.4rem;
+    }
+    .headertag a{
+        font-size: 1rem;
+    }
+}
+@media all and (max-width: 750px){
+    .nojobs h2{
+        font-size: 1.3rem;
+    }
+    .nojobs a{
+        font-size: 1rem;
+    }
+}
+@media all and (max-width:700px){
+    .headertag{
+        width: 100%;
+    }
+}
+@media all and (max-width: 450px){
+    .details p,.details a{
+        font-size: 0.8rem;
+    }
+    .jobs h3{
+        font-size: 1.2rem;
+    }
+    .jobs{
+        min-width: 300px;
+    }
+    .enddate p, .viewdet a, .delete a{
+        font-size: 0.7rem;
+    }
+    .name{
+        font-size: 0.9rem;
+    }
+    .headertag h2{
+        font-size: 1rem;
+    }
+    .headertag a{
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+}

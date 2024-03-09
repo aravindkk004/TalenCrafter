@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalenCrafter | Job detail</title>
+
+    <!-- css file -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/candidate/jobdetail.css">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lato&family=Montserrat&family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- google icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- font awesome cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- web icon -->
+    <link rel="icon" href="../icons/logo.png" type="image/x-icon">
+
+</head>
+<body>
+    <!-- nav bar -->
+    <nav>
+        <div class="title">
+            <!-- <img src="../images/logo1.png" alt="logo" class="logo">   -->
+            <img src="/images/logo1.png" alt="logo" class="logo">
+        </div>
+        <div class="login-options">
+            <a href="/candidate/userhome"><span class="material-symbols-outlined">
+                person
+            </span><p>Profile</p></a>
+            <a href="/logout"><span class="material-symbols-outlined">
+                logout
+            </span><p>Logout</p></a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="details">
+            <h2><%= compDet.companyname %></h2>
+            <div class="detailbox">
+                <div class="logos">
+                    <img src="/images/zoho.jpg" alt="">
+                </div>
+                <p class="actively"><span class="material-symbols-outlined">
+                    trending_up
+                </span><span>Actively Hiring</span></p>
+                <p class="titles">Job Title:</p>
+                <h3><i class="fa-solid fa-briefcase"></i><%= jobDetail.title %></h3>
+
+                <p class="location"><span class="material-symbols-outlined">
+                    location_on
+                </span><%= jobDetail.location %></p>
+
+                <div class="requiredskills">
+                    <p class="skillsrequired">Required Skills:</p>
+                    <ul>
+                        <% jobDetail.skill.forEach((skill)=>{ %>
+                            <li><%= skill%></li>
+                        <% }) %>
+                    </ul>
+                </div>
+                
+                <div class="detailsdiv">
+                    <div class="applicants">
+                        <h5>Applicants:</h5>
+                        <p><span class="material-symbols-outlined">
+                            diversity_3
+                        </span><%= jobDetail.applicants %> Applicants</p>
+                    </div>
+                    <div class="stipend">
+                        <h5>Stippend:</h5>
+                        <p><span class="material-symbols-outlined">
+                            currency_rupee
+                        </span><%= jobDetail.stipend %>/month</p>
+                    </div>
+                    <div class="date">
+                        <h5>Apply by:</h5>
+                        <p><span class="material-symbols-outlined">
+                            calendar_month
+                            </span><%= jobDetail.enddaate%></p>
+                    </div>
+                    <div class="experience">
+                        <h5>Experience:</h5>
+                        <p class="expVal"><%= jobDetail.experience %></p>
+                    </div>
+                </div>
+                
+                
+                <p class="jobdesc">Job Description:</p>
+                <p class="jobdescVal"><%= jobDetail.job_desc %></p>
+                <h5 class="compdet">Company details:</h5>
+                <p class="weblink"><a href="<%= compDet.weblink %>"><%= compDet.weblink %></a></p>
+                <p class="compdetail">Zoho Corporation, founded in 1996 and headquartered in Chennai, India, is a global leader in providing cloud-based software solutions for businesses. Offering a comprehensive suite of applications spanning CRM, project management, collaboration, accounting, and more, Zoho caters to a diverse user base, ranging from small enterprises to large corporations worldwide. Known for its affordability and commitment to user privacy, Zoho emphasizes integration, customization, and continuous innovation, with products like Zoho One providing an all-in-one platform for streamlined business operations. With a strong international presence, Zoho remains a key player in the software-as-a-service (SaaS) industry, fostering a vibrant user community and providing valuable educational resources for businesses of all sizes.</p>
+                <div class="btn">
+
+                    <% const exists = userdet.some((user)=> user.user_id === current_id) %>
+                    <button>
+                        <a href="/candidate/jobapply/<%= jobDetail.job_id %>" class="job-apply-button <%= exists ? 'applied' : 'notapplied' %>">
+                            
+                            <% if(exists){ %>
+                                Already Applied
+                            <% }else{ %>
+                                Apply
+                            <% } %>
+                        </a>
+                      </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer   -->
+    <footer>
+        <div class="contactdetail">
+            <div class="leftfooter">
+                <p><i class="fa-solid fa-envelope"></i>aravind364kk30@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>+91 9342610087</p>
+            </div>
+            <div class="rightfooter">
+                <p>Connect with social media</p>
+                <div class="icons">
+                    <a href=""><img src="/icons/instagram.png" alt="" loading="lazy"></a>
+                    <a href=""><img src="/icons/facebook.png" alt="" loading="lazy"></a>
+                    <a href=""><img src="/icons/linkedin.png" alt="" loading="lazy"></a>
+                    <a href=""><img src="/icons/youtube.png" alt="" loading="lazy"></a>
+                </div>
+            </div>
+        </div>
+        <p id="copyright">Copyright &copy; 2024 | All rights reserved.</p>
+    </footer>
+
+
+    <script>
+        // Add this script in your HTML or a separate JavaScript file
+        document.querySelectorAll('.job-apply-button').forEach(button => {
+            button.addEventListener('click', function (event) {
+                if (this.classList.contains('applied')) {
+                    event.preventDefault(); // Prevent the default behavior if the class is 'applied'
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

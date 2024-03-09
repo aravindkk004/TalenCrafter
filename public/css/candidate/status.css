@@ -1,0 +1,147 @@
+:root{
+    --bg-color: #f4f7fe;
+    --blue-color: blue;
+    --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107;
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-black: #000;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+}
+nav{
+    top: 0;
+}
+main{
+    margin-top: 60px;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+.popupbox{
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 50%;
+    margin: 20px 0px;
+    height: fit-content;
+    background-color: white;
+    margin-top: 50px;
+}
+.notify{
+    margin: 10px 0px;
+    color: grey;
+    font-size: 1.2rem;
+}
+.headerpopup{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+}
+#status{
+    background-color: orange;
+    padding: 5px;
+    border-radius: 5px;
+}
+.headerpopup p{
+    font-weight: bold;
+    margin: 0px;
+}
+.popupbox h3{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.popupbox h5{
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 10px 0px;
+    margin-left: 20px;
+}
+.popupbox p{
+    font-size: 1rem;
+    margin-left: 30px;
+}
+.btns{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.btns button{
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    margin: 20px 0px;
+    color: white;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+.hire{
+    background-color: green;
+}
+.reject{
+    background-color: red;
+}
+.headerpopup .head{
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+}
+.resumedownload{
+    background-color: var(--blue-color);
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+.hiredd{
+    background-color: green;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+.rejected{
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+@media all and (max-width:850px){
+    .popupbox{
+        width: 80%;
+    }
+}
+@media all and (max-width: 450px){
+    .popupbox{
+        width: 100%;
+        border: none;
+        margin-top: 100px;
+    }
+    main{
+        background-color: white;
+    }
+    .headerpopup .head{
+        font-size: 1.1rem;
+    }
+    .popupbox h3{
+        font-size: 1rem;
+    }
+    .popupbox h5{
+        font-size: 1rem;
+    }
+}

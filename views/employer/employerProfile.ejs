@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalenCrafter | Profile</title>
+
+    <!-- css file -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/candidate/userProfile.css">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lato&family=Montserrat&family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- google icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- web icon -->
+    <link rel="icon" href="../icons/logo.png" type="image/x-icon">
+
+</head>
+<body>
+    <!-- nav bar -->
+    <nav>
+        <div class="title">
+            <img src="../images/logo1.png" alt="logo" class="logo">
+        </div>
+        <div class="login-options">
+            <a href="/employer/employerhome"><span class="material-symbols-outlined">
+                home
+            </span><p>Home</p></a>
+            <a href="/logout"><span class="material-symbols-outlined">
+                logout
+            </span><p>Logout</p></a>
+        </div>
+    </nav>
+
+    <!-- main page -->
+    <main>
+        <div class="profilebox">
+            <div class="leftprofile">
+                <div class="profileimg">
+                    <img src="<%= employer.profileimg %>" alt="">
+                </div>
+                <div class="profiledetails">
+                    <p id="username"><%= employerData ? employerData.companyname : "Company Name" %></p>
+
+                    <p><%= jobs ? jobs.length+" Job Posted" : "No jobs posted" %></p>
+
+                    <a href="/employer/employerhome" class="appliedjob">View posted jobs</a>
+                </div>
+                <div class="logoutsection">
+                    <a href="/logout"><span class="material-symbols-outlined">
+                        logout
+                    </span>Logout</a>
+                </div>
+            </div>
+            <div class="rightprofile">
+                <form action="/employer/employerProfile/<%= employer.id %>" method="post">
+                    
+                    <label for="companyname">Company name <span>*</span></label>
+                    <input type="text" name="companyname" placeholder="Eg: Zoho" value="<%= employerData ? employerData.companyname : '' %>" autocomplete="off" required >
+
+                    <label for="email">Email <span>*</span></label>
+                    <input type="email" name="email" placeholder="Eg: abc@gmail.com" value="<%= employer.email %>" autocomplete="off" required >
+
+                    <label for="locations">Location<span>*</span></label>
+                    <input type="text" name="locations" placeholder="Eg: India" value="<%= employerData ? employerData.locations : '' %>">
+
+                    <label for="website">Website link<span>*</span></label>
+                    <input type="text" name="website" placeholder="Eg: www.zoho.com" value="<%= employerData ? employerData.weblink : '' %>" >
+
+                    <label for="aboutCompany">About your Company<span>*</span></label>
+                    <textarea name="about" id="aboutCompany" required ><%= employerData ? employerData.about : '' %></textarea>
+
+                    <label for="type">Company Type<span>*</span></label>
+                    <input type="text" name="type" placeholder="Eg: software" value="<%= employerData ? employerData.companytype : '' %>">
+
+                    <label for="additional">Additional Resources</label>
+                    <p class="ad">Additional resources like Company ISO certificate and others.</p>
+                    <input type="file" name="additional" value="<%= employerData ? employerData.addRes : '' %>" >
+
+                    <% if(locals.employerData){ %>
+                        <% if(employerData.addres){ %>
+                        <% if(!(employerData.addres=="")){ %>
+                            <a href="/viewaddres/<%= employer.id %>" class="addresdownload">View Uploaded Documents</a>
+                        <% } %>
+                        <% } %>
+                    <%}%>
+
+                    <label for="fblink">Facebook Profile Link</label>
+                    <input type="text" name="fblink" placeholder="Eg: www.FaceBook.com" value="<%= employerData ? employerData.fblink : '' %>">
+
+                    <label for="twitter">Twitter Profile Link</label>
+                    <input type="text" name="twitterlink" placeholder="Eg: www.twitter.com" value="<%= employerData ? employerData.twitter : '' %>">
+
+                    <label for="linkedinlink">LinkedIn Profile link</label>
+                    <input type="text" name="linkedinlink" placeholder="Eg: www.linkedin.com" value="<%= employerData ? employerData.linkedin : '' %>">
+
+                    <button class="savebtn">Save</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</body>
+</html>
