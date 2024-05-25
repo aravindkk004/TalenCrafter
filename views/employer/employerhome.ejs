@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalenCrafter | Home</title>
+
+    <!-- css file -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/employer/employerhome.css">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lato&family=Montserrat&family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- google icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- font awesome cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- web icon -->
+    <link rel="icon" href="../icons/logo.png" type="image/x-icon">
+
+</head>
+<body>
+    <!-- nav bar -->
+    <nav>
+        <div class="title">
+            <img src="../images/logo1.png" alt="logo" class="logo">
+        </div>
+        <div class="login-options">
+            <a href="employerProfile"><span class="material-symbols-outlined">
+                person
+            </span><p>Profile</p></a>
+            <a href="/logout"><span class="material-symbols-outlined">
+                logout
+            </span><p>Logout</p></a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="headertag">
+            <h2 class="list">List of Posted Jobs</h2>
+            <a href="/employer/jobpost"><span class="material-symbols-outlined">
+                post_add
+            </span>Add job</a>
+        </div>
+        
+        <div class="joblists">
+            <% if(locals.jobs){ %>
+            <% jobs.forEach((job)=>{ %>
+                <div class="jobs">
+                    <div class="logos">
+                        <img src="<%= comlogo.profileimg %>" alt="company logo">
+                    </div>
+                    <p class="actively"><span class="material-symbols-outlined">
+                        trending_up
+                    </span>Actively Hiring</p>
+                    <h3><i class="fa-solid fa-briefcase"></i><%= job.title %></h3>
+                    <p class="name"><%= companydet.companyname%></p>
+                    <p class="where"><span class="material-symbols-outlined">
+                        location_on
+                    </span><%= job.location %></p>
+                    <p class="money"><span class="material-symbols-outlined">
+                        currency_rupee
+                    </span><%= job.stipend %> /month</p>
+                    <p class="app"><i class="fa-solid fa-people-group"></i><%= (job.applicants!=0) ? job.applicants : '0' %>Applicants</p>
+                    <div class="details">
+                        <div class="enddate">
+                            <p class="hed"><span class="material-symbols-outlined">
+                                calendar_month
+                            </span>Last Date</p>
+                            <p class="startdate"><%= job.enddaate %></p>
+                        </div>
+                        <div class="viewdet">
+                            <a href="/employer/viewapplicants/<%= job.job_id %>" class="viewdetail">View Applicants</a>
+                        </div> 
+                        <div class="delete">
+                            <a href="/delete/job/<%= job.job_id %>">Delete</a>
+                        </div>                       
+                    </div>
+                </div>
+            <% }) %>
+            <% } %>
+            <% if(jobs.length<1){ %>
+                <div class="nojobs">
+                    <h2>No posted Jobs available!</h2>
+                    <a href="/employer/jobpost"><span class="material-symbols-outlined">
+                        add
+                    </span>Post a job</a>
+                </div>
+            <% } %>
+        </div>
+    </main>
+
+    <!-- footer   -->
+    <footer>
+        <div class="contactdetail">
+            <div class="leftfooter">
+                <p><i class="fa-solid fa-envelope"></i>aravind364kk30@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>+91 9342610087</p>
+            </div>
+            <div class="rightfooter">
+                <p>Connect with social media</p>
+                <div class="icons">
+                    <a href=""><img src="../icons/instagram.png" alt="" loading="lazy"></a>
+                    <a href=""><img src="../icons/facebook.png" alt="" loading="lazy"></a>
+                    <a href=""><img src="../icons/linkedin.png" alt="" loading="lazy"></a>
+                    <a href=""><img src="../icons/youtube.png" alt="" loading="lazy"></a>
+                </div>
+            </div>
+        </div>
+        <p id="copyright">Copyright &copy; 2024 | All rights reserved.</p>
+    </footer>
+</body>
+</html>

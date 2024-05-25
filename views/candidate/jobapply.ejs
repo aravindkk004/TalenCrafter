@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalenCrafter | Apply jobs</title>
+
+    <!-- css file -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/candidate/jobapply.css">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lato&family=Montserrat&family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- google icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- web icon -->
+    <link rel="icon" href="../icons/logo.png" type="image/x-icon">
+
+</head>
+<body>
+    <!-- nav bar -->
+    <nav>
+        <div class="title">
+            <img src="/images/logo1.png" alt="logo" class="logo">
+        </div>
+        <div class="login-options">
+            <a href="/candidate/userhome"><span class="material-symbols-outlined">
+                home
+            </span><p>Home</p></a>
+            <a href="/logout" id="login-btn"><span class="material-symbols-outlined">
+                logout
+            </span><p>Logout</p></a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="jobaskdet">
+            <div class="headercover">
+                <h3>Cover Letter</h3>
+                <img src="" alt="">
+            </div>
+            <div class="questions">
+                <form action="/candidate/jobapply/<%= jobid %>" method="post" enctype="multipart/form-data">
+                    <h5>Why should you choose this job?</h5>
+                    <textarea name="whychoose" id="whychoose" required placeholder="Write your answer here."></textarea>
+
+                    <h5>What are your current career goals?</h5>
+                    <textarea name="careergoal" id="careergoal" required placeholder="Write your answer here."></textarea>
+
+                    <h5>Are you ready to join immediately?</h5>
+                    <div class="radiobtn">
+                        <p><input type="radio" value="Yes, I am ready to join immediately" name="join">
+                        <label for="join">Yes, I am ready to join immediately</label></p>
+                        <p><input type="radio" value="No, I will join in 6 months or later" name="join">
+                        <label for="join">No, I will join in 6 months or later</label></p>
+                    </div>
+                    
+
+                    <h5>Upload resume</h5>
+                    <p class="detail">*Employer can view and download this resume</p>
+                    <input type="file" name="resumea">
+
+                    <input type="hidden" value="<%= userid %>" name="userid">
+
+                    <div class="btn">
+                        <button>Apply</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer   -->
+    <footer>
+        <div class="contactdetail">
+            <div class="leftfooter">
+                <p><i class="fa-solid fa-envelope"></i>aravind364kk30@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>+91 9342610087</p>
+            </div>
+            <div class="rightfooter">
+                <p>Connect with social media</p>
+                <div class="icons">
+                    <a href=""><img src="/icons/instagram.png" alt="" loading="lazy"></a>
+                    <a href=""><img src="/icons/facebook.png" alt="" loading="lazy"></a>
+                    <a href=""><img src="/icons/linkedin.png" alt="" loading="lazy"></a>
+                    <a href=""><img src="/icons/youtube.png" alt="" loading="lazy"></a>
+                </div>
+            </div>
+        </div>
+        <p id="copyright">Copyright &copy; 2024 | All rights reserved.</p>
+    </footer>
+</body>
+</html>
