@@ -67,7 +67,7 @@ router.post("/:job_id/:user_id", async(req,res)=>{
         
         After careful consideration of all candidates, we regret to inform you that you have not been selected for this role. While this decision was difficult, we believe it's important to find the best fit for the position.
         
-        Please know that your skills and experience were duly noted, and we encourage you to keep an eye on our future job postings. Your qualifications may align more closely with other opportunities within [Company Name].
+        Please know that your skills and experience were duly noted, and we encourage you to keep an eye on our future job postings. Your qualifications may align more closely with other opportunities within ${details.companyname}.
         
         Thank you once again for your interest in joining our team. We wish you the best of luck in your job search and in all your future endeavors.`;
 
